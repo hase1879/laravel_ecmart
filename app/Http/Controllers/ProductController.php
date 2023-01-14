@@ -57,9 +57,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        $categories = Category::all();
+        $reviews = $product->reviews()->get();
 
-        return view('products.show',compact('product'));
+        return view('products.show', compact('product', 'reviews'));
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product','categories'));
     }
 
     /**
