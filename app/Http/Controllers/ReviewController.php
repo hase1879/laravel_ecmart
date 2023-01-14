@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Review;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
 
 class ReviewController extends Controller
 {
@@ -17,7 +19,7 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'content'=>'required'
+            'content' => 'required'
         ]);
 
         $review = new Review();
