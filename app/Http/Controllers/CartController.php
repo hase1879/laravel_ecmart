@@ -42,6 +42,9 @@ class CartController extends Controller
                 'qty' => $request->qty,
                 'price' => $request->price,
                 'weight' => $request->weight,
+                'option' => [
+                    'image' => $request->image,
+                ]
             ]
         );
 
