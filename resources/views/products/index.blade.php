@@ -13,12 +13,21 @@
                 <h1>{{ $category->name }}の商品一覧{{$total_count}}件</h1>
             @endif
         </div>
+        <div>
+            Sort By
+            @sortablelink('id', 'ID')
+            @sortablelink('price', 'Price')
+        </div>
         <div class="container mt-4">
             <div class="row w-100">
                 @foreach($products as $product)
                 <div class="col-3">
                     <a href="{{route('products.show', $product)}}">
-                        <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                        @if($product->image !== "")
+                        <img src="{{ asset($product->image) }}" class="w-100 img-fluid">
+                        @else
+                        <img src="{{ asset($product->image) }}" class="w-100 img-fluid">
+                        @endif
                     </a>
                     <div class="row">
                         <div class="col-12">
