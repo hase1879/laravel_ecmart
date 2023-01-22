@@ -36,6 +36,7 @@
                     <input type="hidden" name="name" value="{{App\Models\Product::find($fav->favoriteable)->name}}">
                     <input type="hidden" name="price" value="{{App\Models\Product::find($fav->favoriteable)->price}}">
                     <input type="hidden" name="image" value="{{App\Models\Product::find($fav->favoriteable_id)->image}}">
+                    <input type="hidden" name="carriage" value="{{App\Models\Product::find($fav->favoriteable_id)->carriage_flag}}">
                     <input type="hidden" name="qty" value="1">
                     <input type="hidden" name="weight" value="0">
                     <input type="submit" name="btn samuraimart-favorite-add-cart">カートに入れる</button>
