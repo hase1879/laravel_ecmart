@@ -14,9 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('shoppingcart', function (Blueprint $table) {
-            $table->string('code')->default("");
-            $table->integer('price_total')->unsigned()->default(0);
-            $table->integer('qty')->unsigned()->default(0);
+            //
         });
     }
 
@@ -29,7 +27,6 @@ return new class extends Migration
     {
         Schema::table('shoppingcart', function (Blueprint $table) {
             //
-
         });
     }
 };
