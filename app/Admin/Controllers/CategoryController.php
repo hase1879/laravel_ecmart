@@ -36,7 +36,7 @@ class CategoryController extends AdminController
 
         $grid->filter(function($filter) {
             $filter->like('name', 'カテゴリー名');
-            $filter->like('major_category_id', '親カテゴリー名')->multipleSelect(MajorCategory::all()->pluck('name', 'id'));
+            $filter->in('major_category_id', '親カテゴリー名')->multipleSelect(MajorCategory::all()->pluck('name', 'id'));
             $filter->between('created_at', '登録日')->datetime();
         });
 
